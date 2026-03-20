@@ -23,7 +23,7 @@ const SuccessModal = ({ visible, coffee, selectedSize, quantity, onViewCart, onC
                     </View>
 
                     <Animated.View entering={FadeInDown.delay(200)} className="flex-row bg-gray-50 p-4 rounded-xl mb-6">
-                        <Image source={{ uri: coffee?.image }} className="w-20 h-20 rounded-xl" />
+                        <Image source={coffee?.image} className="w-20 h-20 rounded-xl" />
                         <View className="ml-4 justify-center">
                             <Text className="text-lg font-semibold text-gray-800">{coffee?.name}</Text>
                             <Text className="text-base text-gray-600 mt-1">Size: {selectedSize}</Text>
