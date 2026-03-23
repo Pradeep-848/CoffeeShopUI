@@ -28,6 +28,7 @@ import { coffeeData } from '../data/coffeeData';
 import { useCart } from '../context/CartContext';
 import { Fonts, FontSizes } from '../utils/fonts';
 import LinearGradient from 'react-native-linear-gradient';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width, height } = Dimensions.get('window');
 const HEADER_HEIGHT = 280;
@@ -41,6 +42,7 @@ const HomeScreen = ({ navigation }) => {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const scrollY = useSharedValue(0);
     const scrollYRef = useRef(new RNAnimated.Value(0)).current;
+    const insets = useSafeAreaInsets();
 
     const categories = ['All', 'Hot', 'Iced', 'Frappe', 'Special'];
 
@@ -120,6 +122,17 @@ const HomeScreen = ({ navigation }) => {
                 style={{ height: HEADER_HEIGHT }}
             />
 
+            {/* <Animated.View style={[headerAnimatedStyle, {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                backgroundColor: '#713f12',
+                height: HEADER_HEIGHT,
+            }]}>
+                <View className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[#713f12] to-[#a16207]" />
+            </Animated.View> */}
+
             <Animated.ScrollView
                 showsVerticalScrollIndicator={false}
                 onScroll={onScroll}
@@ -136,9 +149,9 @@ const HomeScreen = ({ navigation }) => {
                 }
             >
                 {/* Header Content */}
-                <View style={{ paddingTop: StatusBar.currentHeight + 20, paddingHorizontal: 20 }}>
-                    <Animated.View entering={FadeInUp.delay(100)} className="flex-row justify-between items-center mb-8">
-                        <View>
+                <View style={{ paddingTop: insets.top, paddingHorizontal: 20 }}>
+                    <Animated.View entering={FadeInUp.delay(100)} className="flex-row justify-between items-center">
+                        <View >
                             <Text
                                 className="text-white text-sm"
                                 style={{ fontFamily: Fonts.Poppins.regular }}
@@ -146,7 +159,7 @@ const HomeScreen = ({ navigation }) => {
                                 Good Morning! 👋
                             </Text>
                             <Text
-                                className="text-white text-2xl font-bold mt-1"
+                                className="text-white text-2xl font-bold"
                                 style={{ fontFamily: Fonts.Poppins.bold }}
                             >
                                 Coffee Lover
@@ -158,7 +171,7 @@ const HomeScreen = ({ navigation }) => {
                     </Animated.View>
 
                     {/* Location Card */}
-                    <Animated.View entering={FadeInDown.delay(200)} className="bg-white/20 rounded-2xl p-4 mb-6">
+                    <Animated.View entering={FadeInDown.delay(200)} className="bg-white/20 rounded-2xl p-4 mb-6 mt-2">
                         <View className="flex-row items-center">
                             <MapPin size={18} color="#fff" />
                             <Text
@@ -178,7 +191,7 @@ const HomeScreen = ({ navigation }) => {
 
                     {/* Search Bar */}
                     <Animated.View entering={FadeInDown.delay(300)} className="mb-6">
-                        <View className="flex-row items-center bg-white rounded-2xl px-4 py-3 shadow-lg">
+                        <View className="flex-row items-center bg-white rounded-2xl px-3 py-1 shadow-lg">
                             <Search size={20} color="#713f12" />
                             <TextInput
                                 className="flex-1 ml-3 text-base"
@@ -234,27 +247,27 @@ const HomeScreen = ({ navigation }) => {
                         <View className="flex-row justify-between items-center">
                             <View className="flex-1">
                                 <Text
-                                    className="text-white text-lg font-bold"
+                                    className="text-black text-lg font-bold"
                                     style={{ fontFamily: Fonts.Poppins.bold }}
                                 >
                                     ☕ Special Offer
                                 </Text>
                                 <Text
-                                    className="text-white/90 text-sm mt-1"
+                                    className="text-black/90 text-sm mt-1"
                                     style={{ fontFamily: Fonts.Poppins.regular }}
                                 >
                                     Buy 1 Get 1 Free on all lattes
                                 </Text>
-                                <TouchableOpacity className="mt-3 bg-white/20 self-start px-4 py-2 rounded-full">
+                                <TouchableOpacity className="mt-3 bg-white/20 border border-yellow-900/30 self-start px-4 py-2 rounded-full">
                                     <Text
-                                        className="text-white text-xs font-semibold"
+                                        className="text-black text-xs font-semibold"
                                         style={{ fontFamily: Fonts.Poppins.semiBold }}
                                     >
                                         Order Now →
                                     </Text>
                                 </TouchableOpacity>
                             </View>
-                            <View className="w-20 h-20 bg-white/20 rounded-full items-center justify-center">
+                            <View className="w-20 h-20 bg-black/20 rounded-full items-center justify-center">
                                 <Coffee size={40} color="#fff" />
                             </View>
                         </View>

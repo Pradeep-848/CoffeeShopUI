@@ -34,11 +34,11 @@ const FavoritesScreen = ({ navigation }) => {
                     Tap the heart icon on any coffee to add to favorites
                 </Text>
                 <TouchableOpacity
-                    className="bg-primary px-6 py-3 rounded-full"
+                    className="border border-yellow-900 px-6 py-3 rounded-full"
                     onPress={() => navigation.navigate('HomeTab')}
                 >
                     <Text
-                        className="text-white font-semibold"
+                        className="text-yellow-900 font-semibold"
                         style={{ fontFamily: Fonts.Poppins.semiBold }}
                     >
                         Browse Coffees
