@@ -45,7 +45,7 @@ const SuccessModal = ({ visible, coffee, selectedSize, quantity, onViewCart, onC
 
                         <TouchableOpacity
                             className="py-4 rounded-full items-center border border-yellow-900"
-                            onPress={() => navigation.navigate('HomeTab')}
+                            onPress={() => navigation.navigate('Home')}
                         >
                             <Text className="text-yellow-900 text-lg font-semibold">Continue Shopping</Text>
                         </TouchableOpacity>

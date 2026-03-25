@@ -8,6 +8,7 @@ import FavoritesScreen from '../screens/FavoritesScreen';
 import CartScreen from '../screens/CartScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { useCart } from '../context/CartContext';
+import OrderHistoryScreen from '../screens/OrderHistoryScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -160,10 +161,11 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
 
                 // Icon mapping
                 const IconComponent = {
-                    HomeTab: Home,
+                    Home: Home,
                     Favorites: Heart,
                     CartTab: ShoppingBag,
                     Profile: User,
+                    OrderTab: Coffee,
                 }[route.name];
 
                 return (
@@ -193,9 +195,6 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
 };
 
 const TabNavigator = () => {
-    const { getCartCount } = useCart();
-    const cartCount = getCartCount();
-
     return (
         <Tab.Navigator
             tabBar={(props) => <CustomTabBar {...props} />}
@@ -211,22 +210,11 @@ const TabNavigator = () => {
             }}
         >
             <Tab.Screen
-                name="HomeTab"
+                name="Home"
                 component={HomeScreen}
                 options={{
                     headerShown: false,
                 }}
-            // options={{
-            //     title: 'Coffee Shop',
-            //     tabBarLabel: 'Home',
-            //     tabBarIcon: ({ color, size }) => <Home size={size} color={color} />,
-            //     headerTitle: () => (
-            //         <View className="flex-row items-center">
-            //             <Coffee size={24} color="#fff" />
-            //             <Text className="text-white text-lg font-bold ml-2">Coffee Shop</Text>
-            //         </View>
-            //     ),
-            // }}
             />
             <Tab.Screen
                 name="Favorites"
@@ -242,6 +230,14 @@ const TabNavigator = () => {
                 options={{
                     title: 'Your Cart',
                     tabBarLabel: 'Cart',
+                }}
+            />
+            <Tab.Screen
+                name="OrderTab"
+                component={OrderHistoryScreen}
+                options={{
+                    title: 'Your Orders',
+                    tabBarLabel: 'Orders',
                 }}
             />
             <Tab.Screen

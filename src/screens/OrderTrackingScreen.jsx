@@ -46,23 +46,23 @@ const OrderTrackingScreen = ({ route, navigation }) => {
     return (
         <ScrollView className="flex-1 bg-gray-100">
             {/* Header */}
-            <View className="bg-primary px-5 pt-12 pb-6">
+            <View className="bg-gray-600/10 px-5 p-4 mb-2 flex-row justify-between items-center">
                 <Text
-                    className="text-white text-2xl font-bold"
+                    className="text-black text-xl font-bold"
                     style={{ fontFamily: Fonts.Poppins.bold }}
                 >
                     Order Tracking
                 </Text>
                 <Text
-                    className="text-white/80 mt-1"
+                    className="text-gray-600 underline"
                     style={{ fontFamily: Fonts.Poppins.regular }}
                 >
-                    Order ID: {orderId}
+                    Order ID:{" "} {orderId}
                 </Text>
             </View>
 
             {/* Progress Steps */}
-            <View className="bg-white mx-5 mt-5 p-5 rounded-2xl shadow-lg">
+            <View className="bg-white mx-5 p-5 rounded-2xl shadow-lg">
                 {statusSteps.map((step, index) => (
                     <Animated.View
                         key={step.id}
@@ -89,6 +89,7 @@ const OrderTrackingScreen = ({ route, navigation }) => {
                                 />
                             )}
                         </View>
+
                         <View className="ml-4 flex-1">
                             <Text
                                 className="text-gray-800 font-semibold"
@@ -113,7 +114,7 @@ const OrderTrackingScreen = ({ route, navigation }) => {
             {/* Delivery Info */}
             <Animated.View
                 entering={FadeInUp.delay(300)}
-                className="bg-white mx-5 mt-5 p-5 rounded-2xl shadow-lg"
+                className="bg-white mx-5 mt-2 p-5 rounded-2xl shadow-lg"
             >
                 <Text
                     className="text-gray-800 text-lg font-bold mb-4"
@@ -153,8 +154,8 @@ const OrderTrackingScreen = ({ route, navigation }) => {
             {/* Action Buttons */}
             <View className="flex-row mx-5 mt-5 mb-10">
                 <TouchableOpacity
-                    className="flex-1 bg-primary py-4 rounded-full mr-2"
-                    onPress={() => navigation.navigate('HomeTab')}
+                    className="flex-1 bg-blue-600 py-3 rounded-full mr-2"
+                    onPress={() => navigation.navigate('Home')}
                 >
                     <Text
                         className="text-white text-center font-semibold"
@@ -163,12 +164,13 @@ const OrderTrackingScreen = ({ route, navigation }) => {
                         Track on Map
                     </Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity
-                    className="flex-1 border border-primary py-4 rounded-full ml-2"
+                    className="flex-1 border border-yellow-900 py-3 rounded-full ml-2"
                     onPress={() => navigation.navigate('OrderHistory')}
                 >
                     <Text
-                        className="text-primary text-center font-semibold"
+                        className="text-yellow-900 text-center font-semibold"
                         style={{ fontFamily: Fonts.Poppins.semiBold }}
                     >
                         Order History

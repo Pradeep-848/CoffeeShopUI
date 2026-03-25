@@ -35,7 +35,7 @@ const FavoritesScreen = ({ navigation }) => {
                 </Text>
                 <TouchableOpacity
                     className="border border-yellow-900 px-6 py-3 rounded-full"
-                    onPress={() => navigation.navigate('HomeTab')}
+                    onPress={() => navigation.navigate('Home')}
                 >
                     <Text
                         className="text-yellow-900 font-semibold"

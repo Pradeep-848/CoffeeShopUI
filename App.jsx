@@ -1,5 +1,5 @@
 import './global.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -8,20 +8,35 @@ import TabNavigator from './src/navigation/TabNavigator';
 
 import { CartProvider } from './src/context/CartContext';
 import GetStartedScreen from './src/screens/GetStartedScreen';
-import HomeScreen from './src/screens/HomeScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import CartScreen from './src/screens/CartScreen';
 import OrderScreen from './src/screens/OrderScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
-import { Text, View } from 'react-native';
-import { Coffee } from 'lucide-react-native';
+import OrderTrackingScreen from './src/screens/OrderTrackingScreen';
+import notifee from '@notifee/react-native';
+import notificationService from './src/services/notificationService';
 
 import { FavoritesProvider, useFavorites } from './src/context/FavoritesContext';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+
+  useEffect(() => {
+    const initNotifications = async () => {
+      await notificationService.requestPermissions();
+      await notificationService.createChannels();
+
+      const initialNotification = await notifee.getInitialNotification();
+      if (initialNotification) {
+        console.log('App opened from notification:', initialNotification);
+      }
+    };
+
+    initNotifications();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <FavoritesProvider>
@@ -74,6 +89,11 @@ const App = () => {
                 name="Profile"
                 component={ProfileScreen}
                 options={{ title: 'Profile' }}
+              />
+              <Stack.Screen
+                name="OrderTracking"
+                component={OrderTrackingScreen}
+                options={{ title: 'Order Tracking' }}
               />
             </Stack.Navigator>
           </NavigationContainer>

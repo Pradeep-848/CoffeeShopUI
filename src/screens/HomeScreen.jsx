@@ -180,17 +180,21 @@ const HomeScreen = ({ navigation }) => {
 
                     {/* Search Bar */}
                     <Animated.View entering={FadeInDown.delay(300)} className="mb-6">
-                        <View className="flex-row items-center bg-white rounded-2xl px-3 py-1 shadow-lg">
+                        <View className="flex-row items-center bg-white rounded-2xl px-3 shadow-lg" style={{ minHeight: 48 }}>
                             <Search size={20} color="#713f12" />
                             <TextInput
-                                className="flex-1 ml-3 text-base"
+                                className="flex-1 ml-3"
                                 placeholder="Search your favorite coffee..."
                                 placeholderTextColor="#999"
                                 value={searchQuery}
                                 onChangeText={handleSearch}
                                 style={{
                                     fontFamily: Fonts.Poppins.regular,
-                                    fontSize: FontSizes.base
+                                    fontSize: FontSizes.base,
+                                    paddingVertical: 0,
+                                    marginVertical: 0,
+                                    lineHeight: 24, // Match your font size + comfortable spacing
+                                    textAlignVertical: 'center',
                                 }}
                             />
                             <TouchableOpacity>

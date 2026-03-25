@@ -23,7 +23,7 @@ const OrderCard = ({ order, onPress }) => {
     return (
         <TouchableOpacity
             onPress={() => onPress(order)}
-            className="bg-white rounded-2xl p-4 mb-4 shadow-sm"
+            className="bg-white rounded-2xl p-4 shadow-sm"
         >
             <View className="flex-row justify-between items-start">
                 <View className="flex-1">
@@ -77,22 +77,23 @@ const OrderCard = ({ order, onPress }) => {
 
             <View className="flex-row justify-between mt-3 pt-2">
                 <TouchableOpacity
-                    className="flex-1 bg-primary/10 py-2 rounded-full mr-2"
+                    className="flex-1 bg-yellow-900/10 py-2 rounded-full mr-2"
                     onPress={() => onPress(order)}
                 >
                     <Text
-                        className="text-primary text-center text-sm font-semibold"
+                        className="text-yellow-900 text-center text-sm font-semibold"
                         style={{ fontFamily: Fonts.Poppins.semiBold }}
                     >
                         View Details
                     </Text>
                 </TouchableOpacity>
+
                 {order.status === 'Delivered' && (
                     <TouchableOpacity
-                        className="flex-1 border border-primary py-2 rounded-full ml-2"
+                        className="flex-1 border border-yellow-900 py-2 rounded-full ml-2"
                     >
                         <Text
-                            className="text-primary text-center text-sm font-semibold"
+                            className="text-yellow-900 text-center text-sm font-semibold"
                             style={{ fontFamily: Fonts.Poppins.semiBold }}
                         >
                             Reorder
@@ -151,15 +152,15 @@ const OrderHistoryScreen = ({ navigation }) => {
 
     return (
         <View className="flex-1 bg-gray-100">
-            <View className="bg-primary px-5 pt-12 pb-6">
+            <View className="bg-gray-200 px-5 p-4 flex-row justify-between items-center">
                 <Text
-                    className="text-white text-2xl font-bold"
+                    className="text-black text-xl font-bold"
                     style={{ fontFamily: Fonts.Poppins.bold }}
                 >
                     Order History
                 </Text>
                 <Text
-                    className="text-white/80 mt-1"
+                    className="text-gray-600 mt-1"
                     style={{ fontFamily: Fonts.Poppins.regular }}
                 >
                     Your recent orders
@@ -190,7 +191,7 @@ const OrderHistoryScreen = ({ navigation }) => {
                         </Text>
                         <TouchableOpacity
                             className="bg-primary px-6 py-3 rounded-full mt-5"
-                            onPress={() => navigation.navigate('HomeTab')}
+                            onPress={() => navigation.navigate('Home')}
                         >
                             <Text
                                 className="text-white font-semibold"

@@ -35,7 +35,7 @@ const DetailsScreen = ({ route, navigation }) => {
             <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
                 <TouchableOpacity
                     onPress={() => toggleFavorite(coffee)}
-                    className="absolute top-5 right-5 bg-white/80 rounded-full p-2 z-10"
+                    className="absolute top-5 right-5 bg-black/20 rounded-full p-2 z-10"
                 >
                     <Heart
                         size={24}
