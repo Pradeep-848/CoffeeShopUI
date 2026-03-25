@@ -59,10 +59,7 @@ const OrderScreen = ({ navigation }) => {
                 </Text>
                 <TouchableOpacity
                     className="bg-primary px-8 py-3 rounded-full"
-                    onPress={() => {
-                        setOrderPlaced(false);
-                        navigation.popToTop();
-                    }}
+                    onPress={() => navigation.navigate('HomeTab')}
                 >
                     <Text className="text-white text-base font-semibold">Continue Shopping</Text>
                 </TouchableOpacity>

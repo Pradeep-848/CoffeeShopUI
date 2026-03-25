@@ -107,7 +107,7 @@ const CartScreen = ({ navigation }) => {
                 </Text>
                 <TouchableOpacity
                     className="border border-yellow-900 px-8 py-3 rounded-full"
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('HomeTab')}
                 >
                     <Text
                         className="text-yellow-900 text-base font-semibold"

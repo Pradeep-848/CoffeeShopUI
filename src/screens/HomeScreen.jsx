@@ -122,17 +122,6 @@ const HomeScreen = ({ navigation }) => {
                 style={{ height: HEADER_HEIGHT }}
             />
 
-            {/* <Animated.View style={[headerAnimatedStyle, {
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                backgroundColor: '#713f12',
-                height: HEADER_HEIGHT,
-            }]}>
-                <View className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[#713f12] to-[#a16207]" />
-            </Animated.View> */}
-
             <Animated.ScrollView
                 showsVerticalScrollIndicator={false}
                 onScroll={onScroll}
@@ -151,7 +140,7 @@ const HomeScreen = ({ navigation }) => {
                 {/* Header Content */}
                 <View style={{ paddingTop: insets.top, paddingHorizontal: 20 }}>
                     <Animated.View entering={FadeInUp.delay(100)} className="flex-row justify-between items-center">
-                        <View >
+                        <View className='mt-2 mb-2'>
                             <Text
                                 className="text-white text-sm"
                                 style={{ fontFamily: Fonts.Poppins.regular }}
@@ -171,7 +160,7 @@ const HomeScreen = ({ navigation }) => {
                     </Animated.View>
 
                     {/* Location Card */}
-                    <Animated.View entering={FadeInDown.delay(200)} className="bg-white/20 rounded-2xl p-4 mb-6 mt-2">
+                    <Animated.View entering={FadeInDown.delay(200)} className="bg-white/20 rounded-2xl p-4 mb-4 mt-2">
                         <View className="flex-row items-center">
                             <MapPin size={18} color="#fff" />
                             <Text
@@ -242,7 +231,7 @@ const HomeScreen = ({ navigation }) => {
                 </View>
 
                 {/* Featured Banner */}
-                <Animated.View entering={FadeInRight.delay(500)} className="mx-5 mb-6">
+                <Animated.View entering={FadeInRight.delay(500)} className="mx-5 mb-2">
                     <View className="bg-gradient-to-r from-[#a16207] to-[#713f12] rounded-2xl p-5">
                         <View className="flex-row justify-between items-center">
                             <View className="flex-1">

@@ -214,16 +214,19 @@ const TabNavigator = () => {
                 name="HomeTab"
                 component={HomeScreen}
                 options={{
-                    title: 'Coffee Shop',
-                    tabBarLabel: 'Home',
-                    tabBarIcon: ({ color, size }) => <Home size={size} color={color} />,
-                    headerTitle: () => (
-                        <View className="flex-row items-center">
-                            <Coffee size={24} color="#fff" />
-                            <Text className="text-white text-lg font-bold ml-2">Coffee Shop</Text>
-                        </View>
-                    ),
+                    headerShown: false,
                 }}
+            // options={{
+            //     title: 'Coffee Shop',
+            //     tabBarLabel: 'Home',
+            //     tabBarIcon: ({ color, size }) => <Home size={size} color={color} />,
+            //     headerTitle: () => (
+            //         <View className="flex-row items-center">
+            //             <Coffee size={24} color="#fff" />
+            //             <Text className="text-white text-lg font-bold ml-2">Coffee Shop</Text>
+            //         </View>
+            //     ),
+            // }}
             />
             <Tab.Screen
                 name="Favorites"
