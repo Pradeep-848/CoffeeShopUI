@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert, ActivityIndicator } from 'react-native';
 import { CreditCard, DollarSign, CheckCircle, Mail, Phone, MapPin } from 'lucide-react-native';
 import Animated, { FadeInUp } from 'react-native-reanimated';
-import { useNotifee } from '../hooks/useNotifee';
+import NotificationService from '../services/notificationService';
 
 const OrderScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState('card');
     const [orderPlaced, setOrderPlaced] = useState(false);
-
-    const { showOrderSuccess, showInfo, showError, showWarning, showProgress } = useNotifee();
 
     const [formData, setFormData] = useState({
         fullName: '',
@@ -46,37 +44,14 @@ const OrderScreen = ({ navigation }) => {
 
         setLoading(true);
 
-        // Show processing notification
-        await showProgress();
-        await showInfo('Processing Order', 'Please wait while we confirm your order...');
+        NotificationService.displayNotification(
+            'Order Placed',
+            `Thank you for your order, ${formData.fullName}! Your order is being processed.`
+        );
 
         setTimeout(async () => {
             setLoading(false);
             setOrderPlaced(true);
-
-            // Prepare order details
-            const orderDetails = {
-                orderId: `ORD${Date.now()}`,
-                fullName: formData.fullName,
-                email: formData.email,
-                phone: formData.phone,
-                address: `${formData.address}, ${formData.city}`,
-                total: '45.99', // You can get this from your cart
-                items: '3 items',
-                paymentMethod: paymentMethod,
-                date: new Date().toLocaleDateString(),
-            };
-
-            // Show success notification with Notifee
-            await showOrderSuccess(orderDetails);
-
-            // Also show additional info notification
-            await showInfo(
-                'Check Your Email',
-                `We've sent order confirmation to ${formData.email}`,
-                { email: formData.email, type: 'email_confirmation' }
-            );
-
         }, 2000);
     };
 

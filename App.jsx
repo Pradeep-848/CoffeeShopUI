@@ -14,8 +14,8 @@ import OrderScreen from './src/screens/OrderScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import OrderTrackingScreen from './src/screens/OrderTrackingScreen';
-import notifee from '@notifee/react-native';
-import notificationService from './src/services/notificationService';
+
+import NotificationService from './src/services/notificationService';
 
 import { FavoritesProvider, useFavorites } from './src/context/FavoritesContext';
 
@@ -24,17 +24,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
   useEffect(() => {
-    const initNotifications = async () => {
-      await notificationService.requestPermissions();
-      await notificationService.createChannels();
-
-      const initialNotification = await notifee.getInitialNotification();
-      if (initialNotification) {
-        console.log('App opened from notification:', initialNotification);
-      }
-    };
-
-    initNotifications();
+    NotificationService.requestPermission();
   }, []);
 
   return (
