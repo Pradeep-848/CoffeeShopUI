@@ -1,97 +1,104 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# ☕ Coffee Shop App
 
-# Getting Started
+A beautiful and modern coffee shop mobile application built with **React Native CLI**. This app provides a seamless coffee ordering experience with a stunning UI, smooth animations, and complete e-commerce functionality.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 📱 Screenshots
 
-## Step 1: Start Metro
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><strong>Get Started</strong></td>
+      <td align="center"><strong>Home Screen</strong></td>
+      <td align="center"><strong>Details Screen</strong></td>
+      <td align="center"><strong>Cart Screen</strong></td>
+    </tr>
+    <tr>
+      <td><img src="src/screenshots/1.jpeg" width="200"/></td>
+      <td><img src="src/screenshots/2.jpeg" width="200"/></td>
+      <td><img src="src/screenshots/3.jpeg" width="200"/></td>
+      <td><img src="src/screenshots/4.jpeg" width="200"/></td>
+    </tr>
+    <tr>
+      <td align="center"><strong>Order Screen</strong></td>
+      <td align="center"><strong>Tracking Screen</strong></td>
+      <td align="center"><strong>Favorites</strong></td>
+      <td align="center"><strong>Profile Screen</strong></td>
+    </tr>
+    <tr>
+      <td><img src="src/screenshots/5.jpeg" width="200"/></td>
+      <td><img src="src/screenshots/6.jpeg" width="200"/></td>
+      <td><img src="src/screenshots/7.jpeg" width="200"/></td>
+      <td><img src="src/screenshots/8.jpeg" width="200"/></td>
+    </tr>
+  </table>
+</div>
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 🏠 Core Features
+- **Beautiful Onboarding** - Animated get started screen with background image
+- **Coffee Grid Display** - Browse coffee collection with search functionality
+- **Pull to Refresh** - Refresh the coffee list with smooth animation
+- **Search & Filter** - Search coffees by name and filter by categories
+- **Categories** - Filter coffees by Hot, Iced, Frappe, and Special
 
-```sh
-# Using npm
-npm start
+### 📱 Coffee Details
+- **Size Selection** - Choose from Small, Medium, Large sizes
+- **Quantity Selector** - Adjust quantity with +/- buttons
+- **Dynamic Pricing** - Price updates based on size and quantity
+- **Favorite Button** - Save favorite coffees with heart icon
+- **Add to Cart** - Add items to cart with success modal animation
 
-# OR using Yarn
-yarn start
-```
+### 🛒 Cart Management
+- **View Cart Items** - List all added items with images
+- **Update Quantity** - Increase/decrease item quantity
+- **Remove Items** - Delete items with confirmation alert
+- **Price Calculation** - Subtotal, tax (8%), and total calculation
+- **Empty Cart State** - Beautiful empty cart screen with CTA
 
-## Step 2: Build and run your app
+### 📦 Order System
+- **Checkout Form** - Complete order form with validation
+- **Payment Methods** - Card and PayPal payment options
+- **Order Confirmation** - Success modal with order details
+- **Order Tracking** - Real-time order status tracking
+- **Order History** - View all past orders with details
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### ❤️ Favorites System
+- **Save Favorites** - Heart icon to save favorite coffees
+- **Persistent Storage** - Favorites saved locally with AsyncStorage
+- **Clear All** - Remove all favorites at once
+- **Empty State** - Friendly message when no favorites
 
-### Android
+### 👤 Profile Management
+- **User Profile** - View and edit profile information
+- **Statistics** - Orders count, favorites count, loyalty points
+- **Settings** - Account settings, addresses, payment methods
+- **Edit Profile Modal** - Edit name, email, phone, address
 
-```sh
-# Using npm
-npm run android
+### 🎨 UI/UX Features
+- **Smooth Animations** - FadeIn, SlideIn, Layout animations with Reanimated
+- **Parallax Header** - Animated header with parallax scrolling effect
+- **Gradient Backgrounds** - Beautiful gradient colors throughout
+- **Glassmorphism** - Blur effects on cards and elements
+- **Custom Fonts** - Poppins and Playfair Display fonts
+- **Responsive Design** - Works on all screen sizes
+- **Dark Mode Ready** - Color scheme supports dark mode
 
-# OR using Yarn
-yarn android
-```
+## 🛠️ Tech Stack
 
-### iOS
+### Frontend
+- **React Native CLI** - Core framework
+- **React Navigation** - Navigation (Stack & Bottom Tabs)
+- **NativeWind** - Tailwind CSS for styling
+- **React Native Reanimated** - Smooth animations
+- **Lucide React Native** - Modern icon set
+- **React Native Modal** - Custom modal components
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### State Management
+- **React Context API** - Cart and Favorites state management
+- **AsyncStorage** - Persistent storage for favorites
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Development Tools
+- **React Native CLI** - Development environment
+- **Metro** - JavaScript bundler
+- **Gradle** - Android build system
