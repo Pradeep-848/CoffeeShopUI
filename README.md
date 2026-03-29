@@ -18,18 +18,6 @@ A beautiful and modern coffee shop mobile application built with **React Native 
       <td><img src="src/screenshots/3.jpeg" width="200"/></td>
       <td><img src="src/screenshots/4.jpeg" width="200"/></td>
     </tr>
-    <tr>
-      <td align="center"><strong>Order Screen</strong></td>
-      <td align="center"><strong>Tracking Screen</strong></td>
-      <td align="center"><strong>Favorites</strong></td>
-      <td align="center"><strong>Profile Screen</strong></td>
-    </tr>
-    <tr>
-      <td><img src="src/screenshots/5.jpeg" width="200"/></td>
-      <td><img src="src/screenshots/6.jpeg" width="200"/></td>
-      <td><img src="src/screenshots/7.jpeg" width="200"/></td>
-      <td><img src="src/screenshots/8.jpeg" width="200"/></td>
-    </tr>
   </table>
 </div>
 
