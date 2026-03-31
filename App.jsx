@@ -17,7 +17,7 @@ import OrderTrackingScreen from './src/screens/OrderTrackingScreen';
 
 import NotificationService from './src/services/notificationService';
 
-import { FavoritesProvider, useFavorites } from './src/context/FavoritesContext';
+import { FavoritesProvider } from './src/context/FavoritesContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,61 +30,48 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <FavoritesProvider>
-
         <CartProvider>
           <NavigationContainer>
             <Stack.Navigator
               initialRouteName="GetStarted"
               screenOptions={{
-                headerStyle: {
-                  backgroundColor: "#713f12",
-                },
+                headerStyle: { backgroundColor: "#713f12" },
                 headerTintColor: '#fff',
-                headerTitleStyle: {
-                  fontWeight: 'bold',
-                },
+                headerTitleStyle: { fontWeight: 'bold' },
               }}
             >
               <Stack.Screen
-                name="GetStarted"
-                component={GetStartedScreen}
-                options={{ headerShown: false }}
+                name="GetStarted" component={GetStartedScreen} options={{ headerShown: false }}
               />
+
               <Stack.Screen
-                name="Home"
-                component={TabNavigator}
-                options={{ headerShown: false }}
+                name="Home" component={TabNavigator} options={{ headerShown: false }}
               />
+
               <Stack.Screen
-                name="Details"
-                component={DetailsScreen}
-                options={{ title: 'Coffee Details' }}
+                name="Details" component={DetailsScreen} options={{ title: 'Coffee Details' }}
               />
+
               <Stack.Screen
-                name="Cart"
-                component={CartScreen}
-                options={{ title: 'Your Cart' }}
+                name="Cart" component={CartScreen} options={{ title: 'Your Cart' }}
               />
+
               <Stack.Screen
-                name="Order"
-                component={OrderScreen}
-                options={{ title: 'Place Order' }}
+                name="Order" component={OrderScreen} options={{ title: 'Place Order' }}
               />
+
               <Stack.Screen
-                name="Favorites"
-                component={FavoritesScreen}
-                options={{ title: 'Favorites' }}
+                name="Favorites" component={FavoritesScreen} options={{ title: 'Favorites' }}
               />
+
               <Stack.Screen
-                name="Profile"
-                component={ProfileScreen}
-                options={{ title: 'Profile' }}
+                name="Profile" component={ProfileScreen} options={{ title: 'Profile' }}
               />
+
               <Stack.Screen
-                name="OrderTracking"
-                component={OrderTrackingScreen}
-                options={{ title: 'Order Tracking' }}
+                name="OrderTracking" component={OrderTrackingScreen} options={{ title: 'Order Tracking' }}
               />
+
             </Stack.Navigator>
           </NavigationContainer>
         </CartProvider>
